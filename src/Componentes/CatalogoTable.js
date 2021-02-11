@@ -34,6 +34,7 @@ export default function CatalogoTable(props) {
     const [ showHideRemove, setShowHideRemove ] = useState(false);
 
     const [ MaisDetalhes, setMaisDetalhes ] = useState(false);
+    const [ ToggleDetalhes, setToggleDetalhes ] = useState(false);
 
     function RemoveModal(ID, Titulo) {
         setShowHideRemove({
@@ -84,9 +85,21 @@ export default function CatalogoTable(props) {
                 <td> {Categoria} </td>
                 <td> {DataLançamento} </td>
                 <td>
-                    <Button onClick={() => { setMaisDetalhes(!MaisDetalhes) }}>
+                    {ToggleDetalhes ?
+
+                    <Button variant="secondary" onClick={() => { setMaisDetalhes(!MaisDetalhes) || setToggleDetalhes(!ToggleDetalhes) }}>
+                        Esconder
+                    </Button>
+
+                    
+                    :
+
+                    <Button variant="info" onClick={() => { setMaisDetalhes(!MaisDetalhes) || setToggleDetalhes(!ToggleDetalhes) }}>
                         Detalhes
                     </Button>
+                        
+                    }
+                    
                 </td>
             </tr>
             {

@@ -63,9 +63,9 @@ export default function ModalModificar(props) {
                         <Col>
                             <Form.Group className="text-left" controlId="exampleForm.ControlSelect2">
                                 <Form.Label>
-                                    Data de Lançamento:
+                                    Ano de Lançamento:
                             </Form.Label>
-                                <Form.Control type="date" defaultValue={DataLançamento}
+                                <Form.Control type="text" defaultValue={DataLançamento}
                                     value={DataLançamento}
                                     onChange={(e) => { setDataLançamento(e.target.value) }} />
                             </Form.Group>

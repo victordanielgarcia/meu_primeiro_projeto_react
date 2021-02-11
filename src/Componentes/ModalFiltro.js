@@ -111,7 +111,7 @@ export default function ModalFiltro(props) {
                     <Form.Row>
                     <Col>
                             <Form.Group className="text-left" controlId="exampleForm.ControlInput1">
-                                <Form.Label>Ano Fim </Form.Label>
+                                <Form.Label>Ano Inicial </Form.Label>
                                 <Form.Control size="sm" as="select" id="inicio">
                                     <option value="">Selecione um Ano</option>
                                     <option value="2016">2016</option>
@@ -126,7 +126,7 @@ export default function ModalFiltro(props) {
                         </Col>
                         <Col>
                             <Form.Group className="text-left" controlId="exampleForm.ControlInput1">
-                                <Form.Label>Ano Inicio: </Form.Label>
+                                <Form.Label>Ano Final: </Form.Label>
                                 <Form.Control size="sm" as="select" id="fim">
                                     <option value="">Selecione um Ano</option>
                                     <option value="2016">2016</option>
@@ -145,7 +145,7 @@ export default function ModalFiltro(props) {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={() => { handleClose() || Categoria() || Ano() || RangePorAno()}}>Aplicar Filtro</Button>
-                    <Button variant="danger" onClick={() => { Limpar() }}>Limpar Filtro</Button>
+                    <Button variant="warning" onClick={() => { Limpar() }}>Limpar Filtro</Button>
                     <Button variant="secondary" onClick={() => { handleClose() }}>Fechar</Button>
                 </Modal.Footer>
             </Modal>

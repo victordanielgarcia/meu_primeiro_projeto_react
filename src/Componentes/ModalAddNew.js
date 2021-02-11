@@ -86,8 +86,8 @@ export default function ModalAddNew(props) {
                     <Form.Row>
                         <Col>
                             <Form.Group className="text-left" controlId="exampleForm.ControlSelect2">
-                                <Form.Label>Data de Lançamento: </Form.Label>
-                                <Form.Control id="DataLançamento" type="date" />
+                                <Form.Label>Ano de Lançamento: </Form.Label>
+                                <Form.Control id="DataLançamento" type="text" placeholder="Digite o Ano de Lançamento.." />
                             </Form.Group>
                         </Col>
                         <Col>
