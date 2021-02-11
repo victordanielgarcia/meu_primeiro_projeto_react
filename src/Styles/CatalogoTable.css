@@ -1,0 +1,17 @@
+.Tablebackground{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+}
+
+.Tableimg{
+    width: 35px;
+    height: 50px;
+}
+
+.ButtonWidth{
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+}
