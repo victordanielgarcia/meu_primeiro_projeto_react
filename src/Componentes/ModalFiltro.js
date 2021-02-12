@@ -4,7 +4,16 @@ import { Button, Modal, Form, Col } from 'react-bootstrap';
 
 export default function ModalFiltro(props) {
 
-    const { showHideFiltro, setShowHideFiltro, setSearchCategoria, setSearchAno, setSearchInicioAno, setSearchFimAno, SearchCategoria } = props
+    const { showHideFiltro, 
+            setShowHideFiltro, 
+            setSearchCategoria, 
+            setSearchAno, 
+            setSearchInicioAno, 
+            setSearchFimAno, 
+            SearchCategoria,
+            SearchFimAno,
+            SearchAno,
+            SearchInicioAno } = props
 
     function handleClose() {
         setShowHideFiltro({ show: false });
@@ -47,7 +56,10 @@ export default function ModalFiltro(props) {
                 <Modal.Body>
                     <b>
                         Filtros Aplicados: <br></br>
-                        Categoria: {SearchCategoria} <br></br><br></br>
+                        Categoria: {SearchCategoria} <br></br>
+                        Ano: {SearchAno} <br></br>
+                        AnoInicio: {SearchInicioAno}<br></br>
+                        AnoFim: {SearchFimAno} <br></br><br></br>
                     </b>
                 <Form.Label><b>Filtrar por Data</b></Form.Label>
                 <Form.Row>

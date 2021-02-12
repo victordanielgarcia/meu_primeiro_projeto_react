@@ -44,12 +44,12 @@ export default function Catalogo() {
     const [ OrdenaçãoData, setOrdenaçãoData ] = useState(0);
     const [ OrdenaçãoID, setOrdenaçãoID ] = useState(0);
     const [ OrdenaçãoTitulo, setOrdenaçãoTitulo ] = useState(0);
-    //const [ OrdenaçãoCategoria, setOrdenaçãoCategoria ] = useState(0);
+    const [ OrdenaçãoCategoria, setOrdenaçãoCategoria ] = useState(0);
 
     function OrdenaçãoPorData(indice) { setOrdenaçãoData(indice);}
     function OrdenaçãoPorID(indice) { setOrdenaçãoID(indice);}
     function OrdenaçãoPorTitulo(indice) { setOrdenaçãoTitulo(indice);}
-    //function OrdenaçãoPorCategoria(indice) { setOrdenaçãoCategoria(indice); }
+    function OrdenaçãoPorCategoria(indice) { setOrdenaçãoCategoria(indice); }
 
     function AddNewModal() { setShowHideAddNew({ show: true }); }
     function FiltroModal() { setShowHideFiltro({ show: true }); }
@@ -114,6 +114,11 @@ export default function Catalogo() {
                 SearchCategoria={SearchCategoria}
                 setSearchInicioAno={setSearchInicioAno}
                 setSearchFimAno={setSearchFimAno}
+                SearchAno={SearchAno}
+                SearchInicioAno={SearchInicioAno}
+                SearchFimAno={SearchFimAno}
+
+                
 
             />
             <CatalogoSearch
@@ -183,7 +188,7 @@ export default function Catalogo() {
                                 }
                                 </th>
                                 <th> Categoria 
-                                {/* {
+                                {
                                     OrdenaçãoCategoria === 0 ?
                                     <VscCircleFilled
                                         className="text-danger" 
@@ -200,7 +205,7 @@ export default function Catalogo() {
                                         className="text-primary" 
                                         style={{ cursor: "pointer" }} 
                                         onClick={() => { OrdenaçãoPorCategoria(0) }} />
-                                } */}
+                                }
                                 </th>
                                 <th> Data
                                     {
@@ -232,6 +237,14 @@ export default function Catalogo() {
                                         var TituloA = itemA.Titulo.toUpperCase(), TituloB = itemB.Titulo.toUpperCase();
                                         if ( OrdenaçãoTitulo === 1 || TituloA < TituloB) { return -1 } 
                                         if ( OrdenaçãoTitulo === 2 || TituloA > TituloB) { return 1 }
+                                        else { return 0 }
+                                    }
+                                )
+                                .sort(
+                                    function Categoria(itemA, itemB) {
+                                        var CategoriaA = itemA.Categoria.toUpperCase(), CategoriaB = itemB.Categoria.toUpperCase();
+                                        if ( OrdenaçãoCategoria === 1 || CategoriaA < CategoriaB) { return -1 } 
+                                        if ( OrdenaçãoCategoria === 2 || CategoriaA > CategoriaB) { return 1 }
                                         else { return 0 }
                                     }
                                 )
