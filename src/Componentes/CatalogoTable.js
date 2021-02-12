@@ -2,11 +2,7 @@ import React, { useState } from "react";
 
 import "../Styles/CatalogoTable.css"
 
-
-import {
-    GrCheckbox,
-    GrCheckboxSelected
-} from 'react-icons/gr'
+import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr'
 
 import ModalModificar from "./ModalModificar"
 
@@ -61,22 +57,29 @@ export default function CatalogoTable(props) {
             <ModalModificar
                 showHideModificar={showHideModificar}
                 setShowHideModificar={setShowHideModificar}
-                ModificarItem={ModificarItem}
-            />
+                ModificarItem={ModificarItem} />
+
             <ModalRemove
                 setMaisDetalhes={setMaisDetalhes}
                 showHideRemove={showHideRemove}
                 setShowHideRemove={setShowHideRemove}
                 NewCatalogoDataBase={NewCatalogoDataBase}
-                setNewCatalogoDataBase={setNewCatalogoDataBase}
-            />
+                setNewCatalogoDataBase={setNewCatalogoDataBase} />
+                
             <tr>
-
-            <td className="text-center">{
-                    Active ?
-                        <GrCheckbox style={{ cursor: "pointer" }} className="text-primary" onClick={() => { ChecarItem(ID) }} /> :
-                        <GrCheckboxSelected style={{ cursor: "pointer" }} onClick={() => { ChecarItem(ID) }} />
-                }</td>
+                <td className="text-center">
+                {
+                Active ?
+                    <GrCheckbox 
+                        style={{ cursor: "pointer" }} 
+                        className="text-primary" 
+                        onClick={() => { ChecarItem(ID) }} /> 
+                :
+                    <GrCheckboxSelected 
+                        style={{ cursor: "pointer" }} 
+                        onClick={() => { ChecarItem(ID) }} />
+                }
+                </td>
                 <td> {ID} </td>
                 <td>
                     <img className="Tableimg" src={Imagem} alt="" />
@@ -85,37 +88,47 @@ export default function CatalogoTable(props) {
                 <td> {Categoria} </td>
                 <td> {DataLançamento} </td>
                 <td>
-                    {ToggleDetalhes ?
-
-                    <Button variant="secondary" onClick={() => { setMaisDetalhes(!MaisDetalhes) || setToggleDetalhes(!ToggleDetalhes) }}>
-                        Esconder
+                {
+                ToggleDetalhes ?
+                    <Button 
+                        variant="secondary" 
+                        onClick={() => { 
+                            setMaisDetalhes(!MaisDetalhes) || 
+                            setToggleDetalhes(!ToggleDetalhes) }}>
+                            Esconder
                     </Button>
-
-                    
-                    :
-
-                    <Button variant="info" onClick={() => { setMaisDetalhes(!MaisDetalhes) || setToggleDetalhes(!ToggleDetalhes) }}>
-                        Detalhes
+                :
+                    <Button 
+                        variant="info" 
+                        onClick={() => { 
+                            setMaisDetalhes(!MaisDetalhes) || 
+                            setToggleDetalhes(!ToggleDetalhes) }}>
+                                Detalhes
                     </Button>
-                        
-                    }
-                    
+                }
                 </td>
             </tr>
             {
-                MaisDetalhes &&
-                <tr>
-                    <td colSpan="7">
-                        <ul>
-                            <li>{Titulo}</li>
-                            <li>{Categoria}</li>
-                            <li>{DataLançamento}</li>
-                            <li>{Resumo}</li>
-                            <li>{Descrição}</li>
-                        </ul>
-                        <Button variant="danger" className="mx-1"
-                            onClick={() => RemoveModal(ID, Titulo)}>Deletar</Button>
-                        <Button variant="secondary" onClick={() => {
+            MaisDetalhes &&
+            <tr>
+                <td colSpan="7">
+                    <ul>
+                        <li>{Titulo}</li>
+                        <li>{Categoria}</li>
+                        <li>{DataLançamento}</li>
+                        <li>{Resumo}</li>
+                        <li>{Descrição}</li>
+                    </ul>
+                    <Button 
+                        variant="danger" 
+                        className="mx-1"
+                            onClick={() => 
+                            RemoveModal(ID, Titulo)}>
+                                Deletar
+                    </Button>
+                    <Button 
+                        variant="secondary" 
+                            onClick={() => {
                             setShowHideModificar({
                                 show: true,
                                 ID: ID,
@@ -125,10 +138,11 @@ export default function CatalogoTable(props) {
                                 DataLançamento: DataLançamento,
                                 Resumo: Resumo,
                                 Descrição: Descrição,
-                            })
-                        }}>Editar</Button>
-                    </td>
-                </tr>
+                            })}}>
+                                Editar
+                    </Button>
+                </td>
+            </tr>
             }
         </>
     )

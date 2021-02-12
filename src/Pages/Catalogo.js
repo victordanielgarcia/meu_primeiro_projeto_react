@@ -32,6 +32,8 @@ export default function Catalogo() {
     const [ SearchCatalogo, setSearchCatalogo ] = useState("");
     const [ SearchCategoria, setSearchCategoria ] = useState("");
     const [ SearchAno, setSearchAno ] = useState("");
+    const [ SearchInicioAno,  setSearchInicioAno] = useState("");
+    const [ SearchFimAno, setSearchFimAno] = useState("");
 
     const [ ChangeCard, setChangeCard ] = useState(false);
     const [ ChangeTable, setChangeTable ] = useState(true);
@@ -42,15 +44,12 @@ export default function Catalogo() {
     const [ OrdenaçãoData, setOrdenaçãoData ] = useState(0);
     const [ OrdenaçãoID, setOrdenaçãoID ] = useState(0);
     const [ OrdenaçãoTitulo, setOrdenaçãoTitulo ] = useState(0);
-    const [ OrdenaçãoCategoria, setOrdenaçãoCategoria ] = useState(0);
-
-    const [ SearchInicioAno,  setSearchInicioAno] = useState("");
-    const [ SearchFimAno, setSearchFimAno] = useState("");
+    //const [ OrdenaçãoCategoria, setOrdenaçãoCategoria ] = useState(0);
 
     function OrdenaçãoPorData(indice) { setOrdenaçãoData(indice);}
     function OrdenaçãoPorID(indice) { setOrdenaçãoID(indice);}
     function OrdenaçãoPorTitulo(indice) { setOrdenaçãoTitulo(indice);}
-    function OrdenaçãoPorCategoria(indice) { setOrdenaçãoCategoria(indice); }
+    //function OrdenaçãoPorCategoria(indice) { setOrdenaçãoCategoria(indice); }
 
     function AddNewModal() { setShowHideAddNew({ show: true }); }
     function FiltroModal() { setShowHideFiltro({ show: true }); }
@@ -184,7 +183,7 @@ export default function Catalogo() {
                                 }
                                 </th>
                                 <th> Categoria 
-                                {
+                                {/* {
                                     OrdenaçãoCategoria === 0 ?
                                     <VscCircleFilled
                                         className="text-danger" 
@@ -201,7 +200,7 @@ export default function Catalogo() {
                                         className="text-primary" 
                                         style={{ cursor: "pointer" }} 
                                         onClick={() => { OrdenaçãoPorCategoria(0) }} />
-                                }
+                                } */}
                                 </th>
                                 <th> Data
                                     {
